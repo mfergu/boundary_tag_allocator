@@ -31,7 +31,7 @@ void print_regions(){
   printf("\nregion list - addr NS RS size\n");
   pn = head->next;
   while( pn != head ){
-    printf("%p: %d %d %d\n",pn->start_address,pn->node_state,
+    printf("\t%p: %2d %3d %3d\n",pn->start_address,pn->node_state,
       pn->region_state,pn->size);
     pn = pn->next;
   }
