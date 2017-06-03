@@ -1,8 +1,8 @@
 CC=clang
-CFLAGS=-std=c11 -Weverything -g 
-BINS=temp_compile
+CFLAGS= -Weverything -g 
+BINS=test
 
 all: $(BINS)
 
-temp_compile: pfl1.c
-	$(CC) $(CFLAGS) -c -o temp_compile pfl1.c
+test: pfl1.c test1.c
+	$(CC) $(CFLAGS) -o test pfl1.c test1.c
