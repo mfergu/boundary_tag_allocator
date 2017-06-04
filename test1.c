@@ -48,10 +48,10 @@ int main(){
 
 /* general test */
   ptr[0] = alloc( 200 );
-  printf("alloc 200\n");
+  printf("alloc 200 \n");
   print_regions();
   rc = release( ptr[0] );
-  printf( "alloc 200, release, expect rc of 0, rc = %d\n", rc );
+  printf( "alloc 200 @%p release, expect rc of 0, rc = %d\n", ptr[0], rc );
   print_regions();
   rc = release( ptr[0] );
   printf( "re-release, expect rc of 1, rc = %d\n", rc );
@@ -66,6 +66,7 @@ int main(){
   printf( "release, expect rc of 2, rc = %d\n", rc );
   print_regions();
 
+	// state is not being set to free when coalesced 
   ptr[0] = alloc( 1 );
   printf("alloc 1\n");
   print_regions();
